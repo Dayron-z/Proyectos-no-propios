@@ -3,18 +3,107 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="css/style.css">
   <title>Frontend Mentor | Intro section with dropdown navigation</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+
 </head>
 <body>
+
+  <nav class="nav container">
+    <img src="./images/logo.svg" alt="logo" class="nav__img">
+
+    <div class="nav__hamburguer"></div>
+
+    <div class="nav__overlay">
+      <!-- Menu -->
+      <ul class="nav__menu">
+
+        <!-- Features -->
+        <li class="nav__item">
+          <span class="nav__parent">Features
+            <img src="./images/icon-arrow-down.svg" alt="arrow-down" class="nav__arrow">
+          </span>
+
+          <ul class="nav__inner">
+
+            <li class="nav_dropdown">
+              <a href="#" class="nav__link">
+                <img src="./images/icon-todo.svg" alt="todo" class="nav__illustration">
+                Todo List
+              </a>
+            </li>
+            <li class="nav_dropdown">
+              <a href="#" class="nav__link">
+                <img src="./images/icon-calendar.svg" alt="calendar" class="nav__illustration">
+                Calendar
+              </a>
+            </li>
+            <li class="nav_dropdown">
+              <a href="#" class="nav__link">
+                <img src="./images/icon-reminders.svg" alt="reminder" class="nav__illustration">
+                Reminder
+              </a>
+            </li>
+            <li class="nav_dropdown">
+              <a href="#" class="nav__link">
+                <img src="./images/icon-planning.svg" alt="Planning" class="nav__illustration">
+                Planning
+              </a>
+            </li>
+
+
+
+
+          </ul>
+        </li>
+
+        <!-- Company -->
+        <li class="nav__item">
+          <span class="nav__parent">Company
+            <img src="./images/icon-arrow-down.svg" alt="arrow-down" class="nav__arrow">
+          </span>
+
+          <ul class="nav__inner">
+            
+            <li class="nav__dropdown">
+              <a href="#" class="nav__link">History</a>
+            </li>
+            <li class="nav__dropdown">
+              <a href="#" class="nav__link">Our team</a>
+            </li>
+            <li class="nav__dropdown">
+              <a href="#" class="nav__link">Blog</a>
+            </li>
+
+          </ul>
+        </li>
+
+        <!-- Careers -->
+        <li class="nav__item">
+          <a href="#" class="nav__link">Careers</a>
+        </li>
+
+        <!-- About -->
+        <li class="nav__item">
+          <a href="#" class="nav__link">About</a>
+        </li>
+
+        <!-- Login -->
+        <li class="nav__login">
+          <a href="#" class="nav__sign">Login</a>
+        </li>
+
+        <!-- Register -->
+        <li class="nav__login nav__login--border">
+          <a href="#" class="nav__sign">Register</a>
+        </li>
+
+      </ul>
+    </div>
+  </nav>
+
 
   Features
   Company
@@ -31,9 +120,7 @@
 
   Learn more
   
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+
+  <script src="./js/menu.js"></script>
 </body>
 </html>

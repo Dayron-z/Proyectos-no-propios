@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital@1&family=Poppins:ital,wght@0,500;1,300&display=swap');
+
+:root{
+    --almost-white: hsl(0, 0%, 98%);
+    --medium-gray: hsl(0, 0%, 41%);
+    --almost-black: hsl(0, 0%, 8%);
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+
+body{
+    font-family: 'Epilogue', sans-serif;
+}
+
+/* Menu */
+.container{
+    width: 90%;
+    /* Centrar horizontalmente el container */
+    margin: 0 auto;
+    overflow: hidden;
+    max-width: 1200px;
+}
+
+.nav{
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
+.nav__hamburguer{
+    width: 30px;
+    height: 50%;
+    background-image: url("../images/icon-menu.svg");
+    background-repeat: no-repeat;
+    /* Estudiar background position */
+    background-position: center; 
+    cursor: pointer;
+
+    z-index: 100;
+    transition: background-image 0.3s ;
+}
+
+.nav__hamburguer--open{
+    background-image: url("../images/icon-close-menu.svg");
+}
+
+
+
+.nav__overlay{
+    background-color: #000000a7;
+    /* Sacamos al menu del flujo de flexbox */
+    position: fixed;
+    /* Posicionamos en base a todo el navegador con inset (Estudiar propiedad) */
+    /* inset = forma abreviada que establece simultáneamente los valores de top, right, bottom y left en cero o en los valores que se le den. */
+    inset:0;
+}
+
+.nav__menu{
+    position: absolute;
+    /* Con el top 0 y el bottom 0 estamos haciendo que el div, tome el alto en la totalidad de su contenedor padre */
+    top:0;
+    bottom:0;
+    right: 0;
+    background-color: white;
+    width: 65%;
+    max-width: 400px;
+    padding: 0;
+    list-style: none;
+    /* En caso de que necesitemos mas espacio, con overflow auto se generará un scroll */
+    overflow:auto;
+    padding: 70px 0;
+    /* No de según el proyecto, procedo a eliminar margenes, si algo ocurre borrar esta propiedad */
+    margin: 0;
+}
+
+.nav__item:has(.nav__parent){
+    padding: 0px;
+}
+
+
+.nav__parent{
+    display: grid;
+    align-items: center;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    gap: 1.3em;
+    padding: 20px 0;
+}
+
+.nav__inner{
+    list-style: none;
+    padding: 0;
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    gap: 1.5em;
+    /* Queremos que lo que se salga del contenedor no se pueda ver, para esto usamo hidden*/
+    overflow: hidden;
+    /* Ponemos el height en 0 del contenedor para que no aparezcan los elementos en primer momento */
+    height:0;
+    transition: height .4s;
+}
+
+
+.nav__item{
+    width: 80%;
+    margin: 0 auto;
+    color: var(--almost-black);
+    cursor: pointer;
+    padding: 20px 0;
+}
+
+.nav__link{
+    text-decoration: none;
+    color: var(--almost-black);
+}
+
+.nav__login{
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.nav__login--border{
+    border-radius: 1em;
+    margin-top: 20px;
+    border: 1px solid var(--medium-gray);
+}
+
+.nav__sign{
+    display: inline-block;
+    color: var(--medium-gray);
+    padding: .7em 0;
+    text-decoration: none;
+}
+
