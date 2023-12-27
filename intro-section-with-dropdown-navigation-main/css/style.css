@@ -60,7 +60,18 @@ body{
     /* Posicionamos en base a todo el navegador con inset (Estudiar propiedad) */
     /* inset = forma abreviada que establece simultáneamente los valores de top, right, bottom y left en cero o en los valores que se le den. */
     inset:0;
+    /* Como se supone que no lo hemos abierto, queremos que en principio no se vea */
+    opacity: 0;
+    pointer-events: none;
+    transition: .3s opacity;
 }
+
+.nav__overlay--show{
+    opacity: 1;
+    pointer-events: unset;
+}
+
+
 
 .nav__menu{
     position: absolute;
