@@ -9,3 +9,29 @@ hamburguerIcon.addEventListener("click", () => {
     navOverlay.classList.toggle("nav__overlay--show")
 })
 
+
+navOverlay.addEventListener("click", (e)=>{
+    e.preventDefault();
+    const currentElement = e.target;
+
+    // En la funcion isActive está la explicacion
+    if (isActive(currentElement, "nav__parent")){
+        //window.innerWidth evalua la condición segun el tamaño de la ventana, en este caso evaluamos unicamente el ancho, que es lo mas usual enm temas de responsive.
+
+
+
+        //Pendiente por documentar, revisar video nuevamente (Analizar más en detalle).
+
+        const subMenu = currentElement.parentElement;
+        console.log(subMenu);
+        if (window.innerWidth <768) {
+        }else{
+
+        }
+    }
+})
+
+// Creamos funcion externa que recibe dos parametros, recibe el currentElement el cual es una constante que creamos que guarda el e.target, al hacer clic, la function pregunta ¿El valor de la clase de createElement incluye este string(nav__parent)?
+function isActive(element, string) {
+    return element.classList.value.includes(string)
+}

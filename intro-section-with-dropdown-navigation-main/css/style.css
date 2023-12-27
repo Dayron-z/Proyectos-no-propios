@@ -9,7 +9,7 @@
 * {
     margin: 0;
     box-sizing: border-box;
-    
+
 }
 
 body{
@@ -40,7 +40,7 @@ body{
     background-image: url("../images/icon-menu.svg");
     background-repeat: no-repeat;
     /* Estudiar background position */
-    background-position: center; 
+    background-position: center;
     cursor: pointer;
 
     z-index: 100;
@@ -62,6 +62,7 @@ body{
     inset:0;
     /* Como se supone que no lo hemos abierto, queremos que en principio no se vea */
     opacity: 0;
+    /* Si no ponemos el pointer event como none, seguirán apareciendo las anclas, ya que lo unico que estamos haciendo es que no tenga opacidad, pero que desaparezca como tal*/
     pointer-events: none;
     transition: .3s opacity;
 }
@@ -118,6 +119,7 @@ body{
     height:0;
     transition: height .4s;
 }
+
 
 
 .nav__item{
