@@ -10,6 +10,7 @@
 
 </head>
 <body>
+  <!-- Al nav y al main les da como clase container  para que ambos tenga el widht del mismo tamaño -->
 
   <nav class="nav container">
     <img src="./images/logo.svg" alt="logo" class="nav__img">
@@ -104,8 +105,22 @@
     </div>
   </nav>
 
+  <main class="main">
+    <section class="main__grid">
+      <picture class="main__picture">
 
-  Features
+        <source srcset="images/image-hero-desktop.png" class="main__img" media="(min-width:768px)">
+
+        <img src="images/image-hero-mobile.png" class="main__img">
+
+      </picture>
+    </section>
+  </main>
+
+
+
+
+  <!-- Features
   Company
   Careers
   About
@@ -119,7 +134,7 @@
   create team rituals, and watch productivity soar.
 
   Learn more
-  
+   -->
 
   <script src="./js/menu.js"></script>
 </body>
