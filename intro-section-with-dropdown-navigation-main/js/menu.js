@@ -20,11 +20,21 @@ navOverlay.addEventListener("click", (e)=>{
 
 
 
-        //Pendiente por documentar, revisar video nuevamente (Analizar más en detalle).
+        //Ya sabemos lo que que queremos, para ello creamos la funcion externa que hara que se retorne lo que contenga la clase que le especificamos, ya cunado nos retorne lo que deseamos, queremos acceder al padre del contendor de estos elementos
 
-        const subMenu = currentElement.parentElement;
+        //Orden, primero accedemos al padre de current element, y ahora que tenemos a disposición todos sus hijos, con children buscamos con cual vamos a trabajar especificamente 
+
+        const subMenu = currentElement.parentElement.children[1];
         console.log(subMenu);
         if (window.innerWidth <768) {
+
+            // Si la altura visible (clientHeight) del elemento referenciado por subMenu es igual a 0 (es decir, si actualmente está oculto o tiene altura cero), entonces asigna la altura total del contenido (scrollHeight) del mismo elemento a la variable height.
+            // Si la altura visible no es cero (el elemento está visible), asigna 0 a la variable height.
+             let height = (subMenu.clientHeight == 0) 
+             ? subMenu.scrollHeight
+             : 0;
+
+             subMenu.style.height = `${height}px`
         }else{
 
         }
