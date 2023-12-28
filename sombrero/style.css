@@ -6,6 +6,11 @@
   animation: moveRight 10s forwards;
 }
 
+#animacionDiv img{
+  width: 200px;
+  height: 200px;
+}
+
 @keyframes moveRight {
   to {
     transform: translateX(calc(100vw - 100px));
