@@ -89,13 +89,16 @@ function mostrarInformacionDelUsuario() {
         <p>Nombre: ${nombre}</p>
         <p>Edad: ${edad}</p>
         <p>Familia: ${familia.join(", ")}</p>
-        <p class="casa">Casa: ${casa}</p>
-        <p>Animal Patronus: ${animalPatronus}</p>
+        <p class= "casa">Casa: ${casa}</p>
+        <p class= "animal">Animal Patronus: ${animalPatronus}</p>
         <p>Cualidad: ${cualidad.join(", ")}</p>
         <p>Linaje: ${linaje}</p>
     `;
 
     divInformacion.innerHTML = informacionHTML;
+
+    divInformacion.style.display = "block";
+
 }
 
 document.addEventListener("click", agregarCualidad);
@@ -134,7 +137,7 @@ function sombreroSeleccionador() {
             noMostrarInformacionDelUsuario();
             mostrarClasePociones();
             
-        }, 5000)
+        }, 2000)
     }
 }
 
@@ -142,38 +145,163 @@ function sombreroSeleccionador() {
 function noMostrarInformacionDelUsuario() {
     const divInformacion = document.getElementById("informacion-personaje");
     divInformacion.style.display = "none"
-
-
 }
 
 
 
 function mostrarClasePociones() {
-    // Crear el contenedor div
     let clasePociones = document.createElement("div");
     clasePociones.classList.add("contenedor-clase-pociones")
 
-    // Crear el elemento de texto y establecer su contenido
     let clasePocionesText = document.createElement("p");
     clasePocionesText.textContent = "Yendo a clase de pociones";
 
-    // Agregar el elemento de texto al contenedor div
     clasePociones.appendChild(clasePocionesText);
 
-    // Crear el elemento de imagen y establecer sus atributos
+    let video = document.createElement("video");
+    video.src = "creditos.mp4"
+
     let img = document.createElement("img");
     img.src = "male-student-of-hogwarts-976576315.png";
     img.alt = "Imagen de Clase de Pociones";
 
+
+    if (img.src.includes("male-student-of-hogwarts-976576315.png")) {
+        setTimeout(() => {
+            img.src = "boggart-769408659.png";
+            clasePocionesText.textContent = "Boggart en la clase";
+        }, 2000)}
+
+    if (img.src.includes("male-student-of-hogwarts-976576315.png")) {
+        setTimeout(() => {
+            img.src = "tarantula.png";
+            clasePocionesText.textContent = "Boggart se transforma en un miedo: Araña";
+        }, 4000);
+
+
+    }  
+    
+    if (img.src.includes("male-student-of-hogwarts-976576315.png")) {
+        setTimeout(() => {
+            img.src = "haciendo-hechizo.png";
+            clasePocionesText.textContent = "Pepe potter hace hechizo de Riddikulus";
+        }, 6000);
+    
+    } 
+
+    if (img.src.includes("male-student-of-hogwarts-976576315.png")) {
+        setTimeout(() => {
+            img.src = "araña-ridiculo.jpeg";
+            clasePocionesText.textContent = "La araña hace el ridiculo";
+        }, 8000);
+    
+    } 
+
+    if (img.src.includes("male-student-of-hogwarts-976576315.png")) {
+        setTimeout(() => {
+            img.src = "Patronous.jpg";
+            clasePocionesText.textContent = "Se asigna animal patronous";
+            personaje.animalPatronus = "Leon"
+        }, 10000);
+    
+    } 
+
+
+
+    
+    if (img.src.includes("male-student-of-hogwarts-976576315.png")) {
+        setTimeout(() => {
+            clasePociones.style.display = "none";
+            mostrarInformacionDelUsuario();
+        }, 12000);
+    
+    } 
+
+    if (img.src.includes("male-student-of-hogwarts-976576315.png")) {
+        setTimeout(() => {
+            noMostrarInformacionDelUsuario();
+        }, 14000);
+    
+    } 
+
+    if (img.src.includes("male-student-of-hogwarts-976576315.png")) {
+        setTimeout(() => {
+            clasePociones.style.display = "contents";
+            img.src = "oscuras.png";
+            clasePocionesText.textContent = "Yendo a la clase contra las artes oscuras";
+        }, 14001);
+    
+    } 
+
+    if (img.src.includes("male-student-of-hogwarts-976576315.png")) {
+        setTimeout(() => {
+            img.src = "dementor.png";
+            clasePocionesText.textContent = "Hay un dementor en la clase";
+        }, 16000);
+    
+    } 
+    
+
+    if (img.src.includes("male-student-of-hogwarts-976576315.png")) {
+        setTimeout(() => {
+            img.src = "peleando-dementor.png";
+            clasePocionesText.textContent = "Pepe Potter detiene al dementor";
+        }, 18000);
+    
+    } 
+
+    if (img.src.includes("male-student-of-hogwarts-976576315.png")) {
+        setTimeout(() => {
+            clasePociones.style.display = "none";
+            mostrarInformacionDelUsuario();
+        }, 20000);
+    
+    } 
+
+    if (img.src.includes("male-student-of-hogwarts-976576315.png")) {
+        setTimeout(() => {
+            noMostrarInformacionDelUsuario();
+        }, 22000);
+    
+    } 
+
+
+    if (img.src.includes("male-student-of-hogwarts-976576315.png")) {
+        setTimeout(() => {
+            clasePociones.style.display = "contents";
+            img.remove();
+            clasePociones.appendChild(video);
+            video.play();
+            clasePocionesText.textContent = "Fin";
+        }, 22001);
+    
+    } 
+
+    
+    if (img.src.includes("male-student-of-hogwarts-976576315.png")) {
+        setTimeout(() => {
+            clasePociones.remove();
+        }, 27000);
+    
+    } 
+    
+
+    
+
     img.classList.add("imagen-clase-pociones")
     clasePocionesText.classList.add("estilos-letra")
+    
 
 
     // Agregar el elemento de imagen al contenedor div
+
     clasePociones.appendChild(img);
 
     // Agregar el contenedor div al contenedor deseado (suponiendo que 'container' está predefinido)
     container.appendChild(clasePociones);
+
+
+    
 }
 
 

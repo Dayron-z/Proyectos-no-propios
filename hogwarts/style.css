@@ -53,13 +53,13 @@ p{
 
 .dropup button{
     width: 15vw;
-    background-color: brown;
+    background-color: rgb(76, 9, 9);
 
 }
 
 .informacion-personaje {
     position: relative;
-    background-color: rgba(25, 38, 97, 0.6); /* Fondo con opacidad del 80% */
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo con opacidad del 80% */
     text-align: center;
     padding: 20px;
     font-size: 25px;
@@ -86,7 +86,7 @@ p{
 .texto-sombrero{
     font-weight: bold;
     font-size: 40px;
-    color: rgb(48, 0, 92);    
+    color: rgb(0, 178, 175);    
 }
 
 
@@ -127,3 +127,9 @@ p{
     justify-content: center;
     align-items: center;
 }
+
+.casa, .animal{
+    color: rgb(0, 178, 175);
+    font-size: 35px;
+}
+
