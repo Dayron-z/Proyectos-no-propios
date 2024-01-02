@@ -90,11 +90,11 @@ function startButtonHandler(id) {
     const taskName = document.querySelector("#time #taskName");
     taskName.textContent = tasks[taskIndex].title;
 
-    
+
 
 
 }
 
-
+//Pendiente por terminar
 
 // ${}

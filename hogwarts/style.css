@@ -1,0 +1,109 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+p{
+    text-align: center;
+}
+
+.container-fluid{
+    background-image: url(hogwarts-legacy-uhdpaper.com-4K-3.2832.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+}
+
+.formulario{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+
+
+.eleccion{
+    width: 200px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.cualidades{
+    background-color: antiquewhite;
+    color: rgb(0, 0, 0);
+}
+
+
+.linaje{
+    display: none;
+}
+
+
+
+.container-fluid{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.dropup button{
+    width: 15vw;
+    background-color: brown;
+
+}
+
+.informacion-personaje {
+    position: relative;
+    background-color: rgba(25, 38, 97, 0.6); /* Fondo con opacidad del 80% */
+    text-align: center;
+    padding: 20px;
+    font-size: 25px;
+    font-weight: 600;
+    border-radius: 20px;
+    color: aliceblue;
+}
+
+
+.informacion-personaje p {
+    opacity: 1; /* Texto sin opacidad */
+}
+
+
+
+.elige{
+    color: aliceblue;
+    font-weight: bold;
+    font-size: 30px;
+
+}
+
+/* Css del sombrero */
+#animacionDiv { margin-bottom: 150px;
+    width: 100px;
+    height: 100px;
+    top: 50%;
+    display: none;
+    animation: moveRight 10s forwards;
+  }
+  
+  #animacionDiv img{
+    width: 200px;
+    height: 200px;
+  }
+  
+  @keyframes moveRight {
+    to {
+      transform: translateX(calc(100vw - 100px));
+    }
+  }
+  
