@@ -1,160 +1,147 @@
-const container = document.querySelector(".container-fluid")
-let linaje = document.getElementById("linaje");
-let cualidad = document.getElementById("cualidad");
+const container = document.querySelector(".container-fluid");
 
 let personaje = {
     nombre: "Pepe Potter",
     edad: 17,
-    familia: ["Padre ", " Madre", " Hermana"],
+    familia: ["Padre", "Madre", "Hermana"],
     casa: undefined,
     animalPatronus: undefined,
     cualidad: undefined,
-    linaje: undefined
+    linaje: undefined,
 
-    
+    cualidades: {
+        cualidad1: ["Valor", "Fuerza", "Audacia"],
+        cualidad2: ["Justicia", "Lealtad", "Paciencia"],
+        cualidad3: ["Creatividad", "Erudición", "Inteligencia"],
+        cualidad4: ["Ambición", "Determinación", "Astucia"]
+    }
 };
 
 function agregarCualidad(event) {
-    // Verificar la identificación (.id) de la opción clicada
-    switch (event.target.id) {
-        case "cualidad1":
-            personaje.cualidad = ["Valor", " fuerza", " audacia"];
 
-            if (personaje.cualidad !== undefined) {
-                linaje.style.display = "block";
-                cualidad.style.display = "none";
-            }
-            console.log(personaje);
-            break;
-        case "cualidad2":
-            personaje.cualidad = ["Justicia", " Lealtad", " Paciencia"];
+    const cualidades = {
+        cualidad1: ["Valor", "Fuerza", "Audacia"],
+        cualidad2: ["Justicia", "Lealtad", "Paciencia"],
+        cualidad3: ["Creatividad", "Erudición", "Inteligencia"],
+        cualidad4: ["Ambición", "Determinación", "Astucia"]
+    }
+    const seleccion = cualidades[event.target.id];
 
-            if (personaje.cualidad !== undefined) {
-                linaje.style.display = "block";
-                cualidad.style.display = "none";
-            }
-
-
-            console.log(personaje);
-            break;
-
-        case "cualidad3":
-            personaje.cualidad = ["Creatividad", " Erudición", " Inteligencia"];
-            if (personaje.cualidad !== undefined) {
-                linaje.style.display = "block";
-                cualidad.style.display = "none";
-            }
-            console.log(personaje);
-            break;
-
-        case "cualidad4":
-            personaje.cualidad = ["Ambición", " Determinación", " Astucia"]
-            if (personaje.cualidad !== undefined) {
-                linaje.style.display = "block";
-                cualidad.style.display = "none";
-            }
-            console.log(personaje);
-            break;
-
-        default:
-            break;
+    if (seleccion) {
+        personaje.cualidad = seleccion;
+        linaje.style.display = "block";
+        cualidad.style.display = "none";
+        console.log(personaje);
     }
 }
-
-
 
 function agregarLinaje(event) {
-    switch (event.target.id) {
-        case "linaje1":
-            personaje.linaje = document.getElementById("linaje1").textContent;
-            console.log(personaje);
-            if (personaje.linaje !== undefined) {
-                linaje.style.display = "none";
-                ejecutarSecuencia();
-            }
-            break;
-        case "linaje2":
-            personaje.linaje = document.getElementById("linaje2").textContent;
-            console.log(personaje);
-            if (personaje.linaje !== undefined) {
-                linaje.style.display = "none";
-                ejecutarSecuencia();
-            }
-            break;
-        case "linaje3":
-            personaje.linaje = document.getElementById("linaje3").textContent;
-            console.log(personaje);
-            if (personaje.linaje !== undefined) {
-                linaje.style.display = "none";
-                ejecutarSecuencia();
-            }
-            break;
-        default:
-            break;
-    }
+    const linajes = {
+        linaje1: document.getElementById("linaje1").textContent,
+        linaje2: document.getElementById("linaje2").textContent,
+        linaje3: document.getElementById("linaje3").textContent
+    };
 
-    function ejecutarSecuencia() {
-        mostrarInformacionDelUsuario();
+    const seleccion = linajes[event.target.id];
 
-        let diaDelSombrero = document.createElement("div");
-        const textoSombrero = document.createElement("p");
-        textoSombrero.classList.add("texto-sombrero")
-        textoSombrero.textContent = "Día del sombrero seleccionador";
-
-        diaDelSombrero.appendChild(textoSombrero);
-
-        // Agrega el nuevo elemento justo antes del primer hijo existente
-        container.insertBefore(diaDelSombrero, container.firstChild);
-
-        const animacionDiv = document.getElementById("animacionDiv");
-        animacionDiv.style.display = "block";
-        animacionDiv.addEventListener("animationend", function () {
-            animacionDiv.style.display = "none";
-
-            personaje.casa = "las brisas";
-            mostrarInformacionDelUsuario();
-
-            casa = document.querySelector(".casa");
-            casa.style.color = "black";
-
-            diaDelSombrero.style.display = "none";
-        });
+    if (seleccion) {
+        personaje.linaje = seleccion;
+        linaje.style.display = "none";
+        ejecutarSecuencia();
     }
 }
 
+function ejecutarSecuencia() {
+    mostrarInformacionDelUsuario();
+
+    let diaDelSombrero = document.createElement("div");
+    const textoSombrero = document.createElement("p");
+    textoSombrero.classList.add("texto-sombrero");
+    textoSombrero.textContent = "Día del sombrero seleccionador";
+
+    diaDelSombrero.appendChild(textoSombrero);
+
+
+    container.insertBefore(diaDelSombrero, container.firstChild);
+
+    const animacionDiv = document.getElementById("animacionDiv");
+    animacionDiv.style.display = "block";
+    animacionDiv.addEventListener("animationend", function () {
+        animacionDiv.style.display = "none";
+        mostrarInformacionDelUsuario();
+
+        const casa = document.querySelector(".casa");
+        casa.style.color = "black";
+
+        diaDelSombrero.style.display = "none";
+
+        sombreroSeleccionador();
+        mostrarInformacionDelUsuario();
+    });
+}
 
 function mostrarInformacionDelUsuario() {
     const divInformacion = document.getElementById("informacion-personaje");
 
-        const { nombre, edad, familia, casa, animalPatronus, cualidad, linaje } = personaje;
+    const { nombre, edad, familia, casa, animalPatronus, cualidad, linaje } = personaje;
 
-        const informacionHTML = `
-            <p>Nombre: ${nombre}</p>
-            <p>Edad: ${edad}</p>
-            <p>Familia: ${familia}</p>
-            <p class = "casa">Casa: ${casa}</p>
-            <p>Animal Patronus: ${animalPatronus}</p>
-            <p>Cualidad: ${cualidad}</p>
-            <p>Linaje: ${linaje}</p>
-        `;
+    const informacionHTML = `
+        <p>Nombre: ${nombre}</p>
+        <p>Edad: ${edad}</p>
+        <p>Familia: ${familia.join(", ")}</p>
+        <p class="casa">Casa: ${casa}</p>
+        <p>Animal Patronus: ${animalPatronus}</p>
+        <p>Cualidad: ${cualidad.join(", ")}</p>
+        <p>Linaje: ${linaje}</p>
+    `;
 
-        divInformacion.innerHTML = informacionHTML;
+    divInformacion.innerHTML = informacionHTML;
 }
 
 document.addEventListener("click", agregarCualidad);
 document.addEventListener("click", agregarLinaje);
 console.log(personaje);
 
+function sombreroSeleccionador() {
+
+    if (
+        ["Mestizo", "Muggle", "Sangre pura"].includes(personaje.linaje) &&
+        personaje.cualidades.cualidad1.every(cualidad => personaje.cualidad.includes(cualidad))
+    ) {
+        personaje.casa = "Gryffindor";
+    } else if (
+        ["Mestizo", "Muggle", "Sangre pura"].includes(personaje.linaje) &&
+        personaje.cualidades.cualidad2.every(cualidad => personaje.cualidad.includes(cualidad))
+        
+    ){
+        personaje.casa = "Hufflepuff";
+    } else if (
+        ["Mestizo", "Muggle", "Sangre pura"].includes(personaje.linaje) &&
+        personaje.cualidades.cualidad3.every(cualidad => personaje.cualidad.includes(cualidad))
+        
+    ){
+        personaje.casa = "Ravenclaw";
+    } else if (
+        ["Mestizo", "Muggle", "Sangre pura"].includes(personaje.linaje) &&
+        personaje.cualidades.cualidad4.every(cualidad => personaje.cualidad.includes(cualidad))
+        
+    ){
+        personaje.casa = "Sangre Pura";
+    } 
+
+    if (personaje.casa !== undefined) {
+        setTimeout(()=>{
+            noMostrarInformacionDelUsuario();
+            
+        }, 5000)
+    }
+}
 
 
-
-
-
-
-
-
-
-
+function noMostrarInformacionDelUsuario() {
+    const divInformacion = document.getElementById("informacion-personaje");
+    divInformacion.style.display = "none"
+}
 
 
 
