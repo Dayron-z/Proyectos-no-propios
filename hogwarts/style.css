@@ -88,6 +88,13 @@ p{
 }
 
 /* Css del sombrero */
+.texto-sombrero{
+    font-weight: bold;
+    font-size: 40px;
+    color: rgb(48, 0, 92);    
+}
+
+
 #animacionDiv { margin-bottom: 150px;
     width: 100px;
     height: 100px;

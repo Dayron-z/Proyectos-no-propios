@@ -70,6 +70,7 @@ function agregarLinaje(event) {
             console.log(personaje);
             if (personaje.linaje !== undefined) {
                 linaje.style.display = "none";
+                ejecutarSecuencia();
             }
             break;
         case "linaje2":
@@ -77,6 +78,7 @@ function agregarLinaje(event) {
             console.log(personaje);
             if (personaje.linaje !== undefined) {
                 linaje.style.display = "none";
+                ejecutarSecuencia();
             }
             break;
         case "linaje3":
@@ -84,44 +86,40 @@ function agregarLinaje(event) {
             console.log(personaje);
             if (personaje.linaje !== undefined) {
                 linaje.style.display = "none";
+                ejecutarSecuencia();
             }
             break;
         default:
             break;
     }
 
-    if (personaje.linaje !== undefined) {
+    function ejecutarSecuencia() {
         mostrarInformacionDelUsuario();
 
-        setTimeout(() => {
-            const diaDelSombrero = document.createElement("div");
-            const textoSombrero = document.createElement("p");
-            textoSombrero.textContent = "Hola como están";
-    
-            diaDelSombrero.appendChild(textoSombrero);
-    
-            // Agrega el nuevo elemento justo antes del primer hijo existente
-            container.insertBefore(diaDelSombrero, container.firstChild);
-        }, 2000);
+        let diaDelSombrero = document.createElement("div");
+        const textoSombrero = document.createElement("p");
+        textoSombrero.classList.add("texto-sombrero")
+        textoSombrero.textContent = "Día del sombrero seleccionador";
 
-        
+        diaDelSombrero.appendChild(textoSombrero);
 
-        setTimeout(() => {
-            const animacionDiv = document.getElementById("animacionDiv");
-            animacionDiv.style.display = "block";
-            animacionDiv.addEventListener("animationend", function () {
-                animacionDiv.style.display = "none";
+        // Agrega el nuevo elemento justo antes del primer hijo existente
+        container.insertBefore(diaDelSombrero, container.firstChild);
 
-                personaje.casa = "las brisas"
-                mostrarInformacionDelUsuario();
+        const animacionDiv = document.getElementById("animacionDiv");
+        animacionDiv.style.display = "block";
+        animacionDiv.addEventListener("animationend", function () {
+            animacionDiv.style.display = "none";
 
-                casa = document.querySelector(".casa")
-                casa.style.color = "black"
+            personaje.casa = "las brisas";
+            mostrarInformacionDelUsuario();
 
-            });
-        }, 4000);
+            casa = document.querySelector(".casa");
+            casa.style.color = "black";
+
+            diaDelSombrero.style.display = "none";
+        });
     }
-    
 }
 
 
@@ -146,6 +144,8 @@ function mostrarInformacionDelUsuario() {
 document.addEventListener("click", agregarCualidad);
 document.addEventListener("click", agregarLinaje);
 console.log(personaje);
+
+
 
 
 
