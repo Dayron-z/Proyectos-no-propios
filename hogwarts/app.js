@@ -132,6 +132,7 @@ function sombreroSeleccionador() {
     if (personaje.casa !== undefined) {
         setTimeout(()=>{
             noMostrarInformacionDelUsuario();
+            mostrarClasePociones();
             
         }, 5000)
     }
@@ -141,7 +142,80 @@ function sombreroSeleccionador() {
 function noMostrarInformacionDelUsuario() {
     const divInformacion = document.getElementById("informacion-personaje");
     divInformacion.style.display = "none"
+
+
 }
+
+
+
+function mostrarClasePociones() {
+    // Crear el contenedor div
+    let clasePociones = document.createElement("div");
+    clasePociones.classList.add("contenedor-clase-pociones")
+
+    // Crear el elemento de texto y establecer su contenido
+    let clasePocionesText = document.createElement("p");
+    clasePocionesText.textContent = "Yendo a clase de pociones";
+
+    // Agregar el elemento de texto al contenedor div
+    clasePociones.appendChild(clasePocionesText);
+
+    // Crear el elemento de imagen y establecer sus atributos
+    let img = document.createElement("img");
+    img.src = "male-student-of-hogwarts-976576315.png";
+    img.alt = "Imagen de Clase de Pociones";
+
+    img.classList.add("imagen-clase-pociones")
+    clasePocionesText.classList.add("estilos-letra")
+
+
+    // Agregar el elemento de imagen al contenedor div
+    clasePociones.appendChild(img);
+
+    // Agregar el contenedor div al contenedor deseado (suponiendo que 'container' está predefinido)
+    container.appendChild(clasePociones);
+}
+
+
+
+let clases = {
+    transformaciones: "Profesor Kevin Slughorn",
+    herbologia: "Profesor Maria Umbridge",
+    pociones: "Profesor Liliana McGonagall",
+    encantamientos: "Profesora Jackie",
+    defensaContraLasArtesOscuras: "Profesor Robinson Snape ",
+    animalesMagicos: "Profesor David Filch",
+    historiaDeMagia: "Profesor Ronald Sprout"
+};
+
+
+
+
+
+
+
+
+
+
+let claseTransformaciones =  {
+    nombre: "Kevin Slughorn", 
+    horario: "6 am", 
+    random: parseInt((Math.random())*2)
+}
+
+
+
+
+// }
+
+// let boggartEjemplo = {
+//     llamarFunciones1: claseTransformaciones.enfrentarBoggart,
+//     llamarFunciones2: claseTransformaciones.realizarTransformacionRiddikulus,
+// };
+
+// boggartEjemplo.llamarFunciones1()
+// boggartEjemplo.llamarFunciones2()
+
 
 
 

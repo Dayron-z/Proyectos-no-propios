@@ -109,3 +109,21 @@ p{
     }
   }
   
+.imagen-clase-pociones{
+    width: 500px;
+    height: 500px;
+    border-radius: 100px;
+}
+
+.estilos-letra{
+    font-weight: bold;
+    font-size: 40px;
+    color: cadetblue;
+}
+
+.contenedor-clase-pociones{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
