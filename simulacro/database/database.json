@@ -1,0 +1,23 @@
+{
+  "news": [],
+  "categories": [
+    {
+      "id": "3634",
+      "name": "saddsadasdsa",
+      "description": "dsasdsa"
+    },
+    {
+      "id": "3d3e",
+      "name": "PEpesdadsasa",
+      "description": "sdasadadsdsaaaaaaaaaaaaaa"
+    }
+  ],
+  "users": [
+    {
+      "id": "d371",
+      "name": "Your Name",
+      "email": "test@riwi.io",
+      "password": "riwi2024"
+    }
+  ]
+}
