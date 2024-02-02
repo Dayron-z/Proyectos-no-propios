@@ -29,4 +29,7 @@ request.onerror = () => {
 request.send();
 
 
+
+
+//Las promesas llegan como un mecanismo estandar para ayudar a la legibilidad del codigo 
 // https://www.youtube.com/watch?v=ksg6SDwllDs
