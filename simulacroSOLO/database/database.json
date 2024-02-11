@@ -1,0 +1,43 @@
+{
+  "news": [
+    {
+      "name": "PEdro ",
+      "url": "dsdsasad",
+      "categoryId": "004a",
+      "contentNotice": "sasdsad",
+      "userId": "d371",
+      "publicationDate": "2024-02-11",
+      "id": "080e"
+    }
+  ],
+  "categories": [
+    {
+      "name": "saassdsasdasdads",
+      "description": "assaas",
+      "id": "004a"
+    },
+    {
+      "id": "ff80",
+      "name": "sadsdasda",
+      "description": "dsadssasadas"
+    },
+    {
+      "id": "1fb6",
+      "name": "dsasads",
+      "description": "dsadsdasdas"
+    },
+    {
+      "id": "993a",
+      "name": "sdadsadsa",
+      "description": "sdasdasadsad"
+    }
+  ],
+  "users": [
+    {
+      "id": "d371",
+      "name": "Your Name",
+      "email": "test@riwi.io",
+      "password": "riwi2024"
+    }
+  ]
+}

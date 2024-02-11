@@ -1,22 +1,38 @@
 {
-  "news": [],
+  "news": [
+    {
+      "name": "Pedro",
+      "url": "asaddsasad",
+      "categoryId": null,
+      "content": "sdadsadsadsa",
+      "userId": "d371",
+      "publicationDate": "2024-02-11",
+      "id": "8d89"
+    }
+  ],
   "categories": [
     {
-      "id": "3634",
-      "name": "saddsadasdsa",
-      "description": "dsasdsa"
+      "name": "Ciencia",
+      "description": "Acerca de la cienciasa",
+      "id": "dbc1"
     },
     {
-      "id": "3d3e",
-      "name": "PEpesdadsasa",
-      "description": "sdasadadsdsaaaaaaaaaaaaaa"
+      "id": "c255",
+      "name": "dsassaddsdsa",
+      "description": "sdaassasad"
     }
   ],
   "users": [
     {
       "id": "d371",
-      "name": "Your Name",
+      "name": "Pedro",
       "email": "test@riwi.io",
+      "password": "riwi2024"
+    },
+    {
+      "id": "d321",
+      "name": "Your Name",
+      "email": "test@riwsi.io",
       "password": "riwi2024"
     }
   ]

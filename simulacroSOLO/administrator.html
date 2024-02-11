@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/libs/bootstrap.min.css" />
-    <script src="js/guards/authGuard.js"></script>
+    <script src="/js/guards/guard.js"></script>
     <title>Login</title>
   </head>
   <body>
@@ -95,11 +95,11 @@
           <div class="d-flex w-100 justify-content-end">
             <!-- Button trigger modal -->
             <button
+              id="addNewCategory"
               type="button"
               class="btn btn-primary"
               data-bs-toggle="modal"
               data-bs-target="#modal-category"
-              id="add-new-category"
             >
               Add new Category
             </button>
@@ -130,11 +130,11 @@
           <div class="d-flex w-100 justify-content-end">
             <!-- Button trigger modal -->
             <button
+              id="addNewNotice"
               type="button"
               class="btn btn-primary"
               data-bs-toggle="modal"
               data-bs-target="#modal-notice"
-              id="btnOpenModalNews"
             >
               Add new Notice
             </button>
@@ -152,6 +152,7 @@
                 <th>Actions</th>
               </tr>
             </thead>
+
 
             <tbody id="news-tbody">
               <tr>
@@ -229,9 +230,8 @@
       aria-hidden="true"
     >
       <div class="modal-dialog modal-dialog-centered">
-        <form class="modal-content" id="modal-content">
-          <!-- Input tipo hidden para sabar si existe o no existe valor a la hora de editarlo -->
-          <input type="hidden" id="idCategoryUpdate">
+        <form class="modal-content" id="modalCategories">
+          <input type="hidden" id="inputHiddenCategories">
           <div class="modal-header">
             <h1 class="modal-title fs-5" id="exampleModalLabel">Category</h1>
             <button
@@ -271,7 +271,7 @@
             >
               Close
             </button>
-            <button type="submit" class="btn btn-primary" id="save-changes">Save changes</button>
+            <button type="submit" class="btn btn-primary">Save changes</button>
           </div>
         </form>
       </div>
@@ -286,8 +286,8 @@
       aria-hidden="true"
     >
       <div class="modal-dialog modal-dialog-centered">
-        <form class="modal-content" id="FormNews">
-          <input type="hidden" id="idNewUpdate">
+        <form class="modal-content" id="formNotice">
+          <input type="hidden" id="inputHiddenNew">
           <div class="modal-header">
             <h1 class="modal-title fs-5" id="exampleModalLabel">Notice</h1>
             <button
@@ -349,8 +349,8 @@
         </form>
       </div>
     </div>
-    <script src="js/libs/bootstrap.bundle.min.js"></script>
     <script src="js/admin/categories/index.js" type="module"></script>
-    <script type="module" src="js/admin/news/index.js"></script>
+    <script src="js/admin/news/index.js" type="module"></script>
+    <script src="js/libs/bootstrap.bundle.min.js"></script>
   </body>
 </html>
